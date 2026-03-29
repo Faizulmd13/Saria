@@ -1,0 +1,125 @@
+/* 1. FONT IMPORTS */
+/* Montserrat is available on Google Fonts. Clash Display is often self-hosted. */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+:root {
+  /* Brand Palette from Image */
+  --primary: #ff823a;       /* The Orange */
+  --accent-red: #ff3333;    /* The Red */
+  --accent-green: #40ff6a;  /* The Vibrant Green */
+  --dark-900: #16171d;      /* Deep Dark */
+  --dark-700: #414141;      /* Mid Dark/Gray */
+  --white: #ffffff;
+
+  /* Functional Mapping (Light Mode) */
+  --bg: var(--white);
+  --text: var(--dark-700);
+  --text-h: var(--dark-900);
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  
+  --accent-bg: rgba(255, 130, 58, 0.1);
+  --accent-border: rgba(255, 130, 58, 0.5);
+  --social-bg: rgba(244, 243, 236, 0.5);
+  --shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  /* Typography */
+  --heading-font: 'Clash Display Variable', 'Inter', sans-serif;
+  --body-font: 'Montserrat', sans-serif;
+  --mono-font: ui-monospace, Consolas, monospace;
+
+  font: 18px/150% var(--body-font);
+  letter-spacing: 0.1px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+/* 2. DARK MODE OVERRIDES */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: var(--dark-900);
+    --text: #d1d5db;         /* Softer white for long reading */
+    --text-h: var(--white);
+    --border: var(--dark-700);
+    --code-bg: #1f2028;
+    
+    --accent-bg: rgba(255, 130, 58, 0.15);
+    --accent-border: rgba(255, 130, 58, 0.5);
+    --social-bg: rgba(47, 48, 58, 0.5);
+    --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+}
+
+#root {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* 3. TYPOGRAPHY SCALING */
+h1, h2, h3 {
+  font-family: var(--heading-font);
+  font-weight: 600; /* Clash Display looks best bold */
+  color: var(--text-h);
+  text-transform: capitalize; /* Optional: fits the "Saria" brand vibe */
+}
+
+h1 {
+  font-size: 64px;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin: 40px 0;
+  
+  @media (max-width: 1024px) {
+    font-size: 42px;
+  }
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+
+  @media (max-width: 1024px) {
+    font-size: 26px;
+  }
+}
+
+p {
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+code {
+  font-family: var(--mono-font);
+  font-size: 0.9em;
+  padding: 0.2em 0.4em;
+  background: var(--code-bg);
+  border-radius: 6px;
+  color: var(--primary); /* Using the brand color for code snippets */
+}
+
+/* Helper Class for the Brand Green */
+.text-success { color: var(--accent-green); }
+.text-primary { color: var(--primary); }
