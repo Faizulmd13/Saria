@@ -1,8 +1,10 @@
+import '../../styles/Footer.css';
+
 const Footer = () => {
   return (
     <footer className="main-footer">
       <div className="footer-content">
-        <p>© 2026 **Saria** Digital Storefront. All rights reserved.</p>
+        <p>© 2026 <strong>Saria</strong> Digital Storefront. All rights reserved.</p>
         
         <nav className="footer-links">
           <a 
