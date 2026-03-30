@@ -1,0 +1,191 @@
+.home-container {
+  width: 100%;
+  /* Pure dark base to ensure no light leaks between sections */
+  background-color: #0a0a0a; 
+  color: var(--white);
+}
+
+/* 1. ABSTRACT HERO SECTION (No Images) */
+.hero {
+  height: 85vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* Abstract Mesh Gradient using Saria Brand Colors */
+  background-color: #0a0a0a;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(255, 130, 58, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(64, 255, 106, 0.1) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(255, 130, 58, 0.05) 0px, transparent 50%);
+}
+
+/* Subtle moving grain effect for texture (Optional but adds a premium feel) */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.hero-content {
+  max-width: 900px;
+  padding: 0 2rem;
+  z-index: 2;
+  animation: fadeInUp 1.2s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.hero-title {
+  font-family: var(--heading-font);
+  font-size: clamp(3.5rem, 12vw, 7rem);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  line-height: 0.85;
+  letter-spacing: -4px;
+  color: var(--white);
+}
+
+.hero-subtitle {
+  font-family: var(--body-font);
+  max-width: 550px;
+  margin: 0 auto 3.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  color: #9ca3af; /* Muted gray for better contrast on black */
+}
+
+.cta-button {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 1.2rem 3.5rem;
+  border: none;
+  font-family: var(--heading-font);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  border: 1px solid transparent;
+}
+
+.cta-button:hover {
+  background-color: transparent;
+  border-color: var(--accent-green);
+  color: var(--accent-green);
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(64, 255, 106, 0.15);
+}
+
+/* 2. FEATURED CATEGORIES (Dark Mode Refined) */
+.featured-categories {
+  padding: 10rem 2rem;
+  background-color: #0a0a0a;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.section-title {
+  font-family: var(--heading-font);
+  font-size: 3rem;
+  letter-spacing: -2px;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.section-header p {
+  color: #6b7280;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.category-card {
+  background: #111113; /* Slightly lighter than the background to pop */
+  border: 1px solid #1f1f23;
+  transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.category-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-15px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.card-image-wrapper {
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  /* Greyscale by default, color on hover */
+  filter: grayscale(100%);
+  transition: filter 0.6s ease;
+}
+
+.category-card:hover .card-image-wrapper {
+  filter: grayscale(0%);
+}
+
+.category-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: transform 1s ease, opacity 0.6s ease;
+}
+
+.category-card:hover .category-image {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.card-content {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-info h3 {
+  color: var(--white);
+  font-size: 1.5rem;
+  font-family: var(--heading-font);
+  margin: 0;
+}
+
+.view-btn {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  background: none;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

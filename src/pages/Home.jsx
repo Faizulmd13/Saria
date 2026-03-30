@@ -7,7 +7,6 @@ const Home = () => {
   const [featuredCategories, setFeaturedCategories] = useState([]);
   const navigate = useNavigate();
 
-  // We'll pick specific high-interest categories for the home page
   const featuredSlugs = [
     "smartphones", 
     "laptops", 
@@ -33,7 +32,7 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      {/* 1. HERO SECTION */}
+      {/* HERO SECTION */}
       <section className="hero">
         <div className="hero-content">
           <h1 className="hero-title">
@@ -49,7 +48,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 2. FEATURED CATEGORIES */}
+      {/* FEATURED CATEGORIES */}
       <section className="featured-categories">
         <div className="section-header">
           <h2 className="section-title">The Curated Series</h2>

@@ -25,7 +25,6 @@ export const CartProvider = ({ children }) => {
 
   const clearCart = () => setCart([]);
 
-  //Update quantity of product used in cart page
   const updateQuantity = (productId, newQuantity) => {
     if (newQuantity < 1) {
       removeFromCart(productId);

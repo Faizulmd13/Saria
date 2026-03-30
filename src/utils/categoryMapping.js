@@ -25,10 +25,6 @@ export const categoryImages = {
   "womens-watches": "/categories/womens-watches.jpg"
 };
 
-/**
- * Helper function to get the image path.
- * Falls back to a placeholder if the category doesn't exist.
- */
 export const getCategoryImage = (slug) => {
   return categoryImages[slug] || "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800";
 };
