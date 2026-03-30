@@ -1,125 +1,83 @@
 /* 1. FONT IMPORTS */
-/* Montserrat is available on Google Fonts. Clash Display is often self-hosted. */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Montserrat:wght@700;900&display=swap');
 
 :root {
-  /* Brand Palette from Image */
-  --primary: #ff823a;       /* The Orange */
-  --accent-red: #ff3333;    /* The Red */
-  --accent-green: #40ff6a;  /* The Vibrant Green */
-  --dark-900: #16171d;      /* Deep Dark */
-  --dark-700: #414141;      /* Mid Dark/Gray */
-  --white: #ffffff;
-
-  /* Functional Mapping (Light Mode) */
-  --bg: var(--white);
-  --text: var(--dark-700);
-  --text-h: var(--dark-900);
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
+  /* Rocamper Palette extracted from Image */
+  --color-base: #0a0a0b;        /* Deepest Black */
+  --color-surface: #161618;     /* Card/Section Background */
+  --color-primary: #ff7a2d;      /* Vibrant Orange (Brand Color) */
+  --color-white: #ffffff;
   
-  --accent-bg: rgba(255, 130, 58, 0.1);
-  --accent-border: rgba(255, 130, 58, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  /* Glassmorphism Constants */
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-blur: blur(12px);
+  
+  /* Typography Scaling */
+  --font-main: 'Inter', sans-serif;
+  --font-display: 'Montserrat', sans-serif; /* For the "EXPLORING" look */
 
-  /* Typography */
-  --heading-font: 'Clash Display Variable', 'Inter', sans-serif;
-  --body-font: 'Montserrat', sans-serif;
-  --mono-font: ui-monospace, Consolas, monospace;
+  /* Shadows & Radius */
+  --shadow-glow: 0 0 20px rgba(255, 122, 45, 0.2);
+  --radius-xl: 24px;
+  --radius-md: 12px;
 
-  font: 18px/150% var(--body-font);
-  letter-spacing: 0.1px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+  /* Global Settings */
+  background-color: var(--color-base);
+  color: var(--color-white);
+  font-family: var(--font-main);
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
 }
 
-/* 2. DARK MODE OVERRIDES */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: var(--dark-900);
-    --text: #d1d5db;         /* Softer white for long reading */
-    --text-h: var(--white);
-    --border: var(--dark-700);
-    --code-bg: #1f2028;
-    
-    --accent-bg: rgba(255, 130, 58, 0.15);
-    --accent-border: rgba(255, 130, 58, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-}
-
-body {
+/* 2. CORE LAYOUT */
+* {
   margin: 0;
-  background-color: var(--bg);
-}
-
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
+  padding: 0;
   box-sizing: border-box;
 }
 
-/* 3. TYPOGRAPHY SCALING */
-h1, h2, h3 {
-  font-family: var(--heading-font);
-  font-weight: 600; /* Clash Display looks best bold */
-  color: var(--text-h);
-  text-transform: capitalize; /* Optional: fits the "Saria" brand vibe */
+body {
+  background: radial-gradient(circle at top right, #1a1a1d, #0a0a0b);
+  min-height: 100vh;
 }
 
+/* 3. GLASS UTILITY CLASS */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+}
+
+/* 4. TYPOGRAPHY */
 h1 {
-  font-size: 64px;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-  margin: 40px 0;
-  
-  @media (max-width: 1024px) {
-    font-size: 42px;
-  }
-}
-
-h2 {
-  font-size: 32px;
-  line-height: 1.2;
+  font-family: var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: clamp(2.5rem, 8vw, 5rem); /* Responsive fluid scaling */
   letter-spacing: -0.02em;
-  margin-bottom: 16px;
-
-  @media (max-width: 1024px) {
-    font-size: 26px;
-  }
+  line-height: 0.9;
 }
 
-p {
-  margin-bottom: 1.5rem;
-  font-weight: 400;
+.text-accent {
+  color: var(--color-primary);
 }
 
-code {
-  font-family: var(--mono-font);
-  font-size: 0.9em;
-  padding: 0.2em 0.4em;
-  background: var(--code-bg);
-  border-radius: 6px;
-  color: var(--primary); /* Using the brand color for code snippets */
+/* 5. BUTTON STYLING (The Orange Search Button) */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Helper Class for the Brand Green */
-.text-success { color: var(--accent-green); }
-.text-primary { color: var(--primary); }
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
