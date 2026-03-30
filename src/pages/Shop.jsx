@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react"; // Added useMemo for performance
 import { useSearchParams } from "react-router-dom";
 import useProducts from "../hooks/useProducts";
-import Sidebar from "../components/shop/Sidebar";
+import Sidebar from "../components/shop/SideBar";
 import ProductCard from "../components/shop/ProductCard";
 import "../styles/Shop.css";
 
