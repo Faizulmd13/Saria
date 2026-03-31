@@ -5,9 +5,9 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
+  background: rgba(24, 24, 28, 0.75);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
   border-bottom: 1px solid var(--glass-border);
 }
 
@@ -32,7 +32,7 @@
   color: var(--color-primary);
   margin: 0;
   text-shadow: var(--shadow-glow);
-  font-family: var(--font-display); 
+  font-family: var(--font-display);
 }
 
 .logo h1::first-letter {
@@ -49,12 +49,12 @@
 }
 
 .icons a {
-  position: relative; 
+  position: relative;
   color: var(--color-white);
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
-  padding-bottom: 6px; 
+  padding-bottom: 6px;
 }
 
 .icons a::after {
@@ -62,7 +62,7 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 0; 
+  width: 0;
   height: 2px;
   background-color: var(--color-primary);
   transition: width 0.3s ease;
@@ -74,7 +74,7 @@
 
 .icons a.active-link::after {
   width: 100%;
-  box-shadow: var(--shadow-glow); 
+  box-shadow: var(--shadow-glow);
 }
 
 .icons a.active-link {
