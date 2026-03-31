@@ -1,4 +1,5 @@
 import { useCart } from "../../context/CartContext";
+import "../../styles/Invoice.css"
 
 const Invoice = () => {
   const { cart } = useCart();

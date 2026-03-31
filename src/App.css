@@ -1,0 +1,14 @@
+/* App.css */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-area {
+  flex-grow: 1;
+  padding: 80px 20px 40px; /* Top padding to account for fixed header */
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}

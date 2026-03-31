@@ -1,75 +1,54 @@
+/* Header.css */
 .main-header {
-  width: 100%;
-  background-color: var(--bg);
-  border-bottom: 1px solid var(--border);
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 1000; /* Keeps the header above product cards */
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--glass-border);
 }
 
 .header-content {
-  /* Matching the max-width of your #root for consistency */
-  width: 1126px;
-  max-width: 100%;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 1.2rem 2rem;
-  box-sizing: border-box;
+  padding: 15px 20px;
 }
 
-nav {
+.main-header nav {
   display: flex;
-  justify-content: space-between; /* Logo left, Icons right, Middle empty */
+  justify-content: space-between;
   align-items: center;
 }
 
-.logo {
-  font-family: var(--heading-font);
+.logo a {
+  text-decoration: none;
+}
+
+.logo h1 {
   font-size: 2rem;
-  font-weight: 600;
-  color: var(--text-h);
-  cursor: pointer;
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s ease;
-}
-
-.logo:hover {
-  transform: scale(1.1); /* Little zoom effect */
-  color: var(--primary); /* Optional: changes to your brand orange on hover */
-}
-
-.icons ul {
-  display: flex;
-  gap: 2.5rem; /* Space between links */
-  list-style: none;
+  color: var(--color-primary);
   margin: 0;
-  padding: 0;
+  text-shadow: var(--shadow-glow);
 }
 
-.icons li {
-  font-family: var(--body-font);
-  font-weight: 500;
+.icons {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.icons a {
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: 600;
   font-size: 1rem;
-  color: var(--text);
-  cursor: pointer;
-  position: relative;
   transition: color 0.3s ease;
 }
 
-.icons li:hover {
-  color: var(--text-h); /* Darkens slightly on hover */
-}
-
-/* Elegant underline hover effect */
-.icons li::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -5px;
-  left: 0;
-  background-color: var(--primary); /* Using your brand orange */
-  transition: width 0.3s ease;
-}
-
-.icons li:hover::after {
-  width: 100%;
+.icons a:hover,
+.icons a.cart-link span {
+  color: var(--color-primary);
 }

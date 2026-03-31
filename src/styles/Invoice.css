@@ -1,0 +1,55 @@
+/* Invoice.css */
+.invoice-container {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  padding: 30px;
+  position: sticky;
+  top: 100px;
+}
+
+.invoice-container h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  color: var(--color-primary);
+}
+
+.invoice-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.invoice-container hr {
+  border: none;
+  border-top: 1px solid var(--glass-border);
+  margin: 20px 0;
+}
+
+.invoice-row.total {
+  font-size: 1.4rem;
+  color: var(--color-white);
+  margin-bottom: 30px;
+}
+
+.checkout-btn {
+  width: 100%;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  padding: 16px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.checkout-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}

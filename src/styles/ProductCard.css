@@ -1,0 +1,96 @@
+/* ProductCard.css */
+.product-card {
+  background: var(--color-surface);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-glow);
+  border-color: rgba(255, 122, 45, 0.3);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  background: var(--color-base);
+  border-radius: var(--radius-md);
+  padding: 10px;
+}
+
+.product-card h3 {
+  font-size: 1.1rem;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-card p {
+  color: var(--color-primary);
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--glass-bg);
+  border-radius: 50px;
+  padding: 5px;
+  border: 1px solid var(--glass-border);
+}
+
+.quantity-controls button {
+  background: transparent;
+  border: none;
+  color: var(--color-white);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-controls button:hover {
+  background: var(--color-surface);
+  color: var(--color-primary);
+}
+
+.quantity-controls input {
+  width: 40px;
+  text-align: center;
+  background: transparent;
+  border: none;
+  color: var(--color-white);
+  font-weight: 600;
+  -moz-appearance: textfield;
+}
+
+.product-card > button {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--color-white);
+  padding: 12px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.product-card > button:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}

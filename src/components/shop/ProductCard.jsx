@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useCart } from "../../context/CartContext";
+import "../../styles/ProductCard.css";
 
 const ProductCard = ({ product }) => {
   const [quantity, setQuantity] = useState(1);

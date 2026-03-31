@@ -1,24 +1,22 @@
+/* SideBar.css */
 .shop-sidebar {
   width: 260px;
-  min-width: 260px;
-  padding: 2rem 1.5rem;
-  background-color: #0a0a0a; /* Matches your abstract home background */
-  border-right: 1px solid var(--border);
-  height: calc(100vh - 80px); /* Adjust based on header height */
+  flex-shrink: 0;
   position: sticky;
-  top: 80px;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: var(--dark-700) transparent;
+  top: 100px; /* Accounts for header */
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  padding: 25px;
 }
 
 .sidebar-title {
-  font-family: var(--heading-font);
-  font-size: 0.75rem;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: var(--color-primary);
   text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--dark-700);
-  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
 }
 
 .category-list {
@@ -27,42 +25,26 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 8px;
 }
 
 .category-item {
-  font-family: var(--body-font);
-  font-size: 0.95rem;
-  color: #9ca3af;
-  padding: 0.75rem 1rem;
+  padding: 10px 15px;
+  border-radius: var(--radius-md);
   cursor: pointer;
-  border-radius: 4px;
   transition: all 0.3s ease;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: capitalize;
 }
 
 .category-item:hover {
-  color: var(--white);
-  background-color: rgba(255, 255, 255, 0.05);
-  padding-left: 1.5rem; /* Subtle "slide" effect on hover */
+  background: var(--glass-bg);
+  color: var(--color-white);
 }
 
-/* Active State Styles */
 .category-item.active {
-  color: var(--primary); /* Saria Orange */
-  background-color: rgba(255, 130, 58, 0.08);
+  background: var(--color-surface);
+  color: var(--color-primary);
+  border-left: 3px solid var(--color-primary);
   font-weight: 600;
-  border-left: 3px solid var(--primary);
-}
-
-/* Custom Scrollbar for the Sidebar */
-.shop-sidebar::-webkit-scrollbar {
-  width: 4px;
-}
-
-.shop-sidebar::-webkit-scrollbar-thumb {
-  background: var(--dark-700);
-  border-radius: 10px;
 }
