@@ -12,7 +12,7 @@ const Invoice = () => {
   const total = subtotal + tax;
 
   const handleCheckout = () => {
-    alert("Santa is on the way with your purchase 'Ho Ho Ho Ho Ho");
+    alert("The Products have been purchased.");
   };
 
   return (

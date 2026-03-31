@@ -60,3 +60,25 @@
   font-size: 1.2rem;
   color: var(--color-primary);
 }
+
+@media (max-width: 900px) {
+  .shop-layout {
+    flex-direction: column;
+  }
+  .shop-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .shop-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* Smaller cards on mobile */
+    gap: 15px;
+  }
+}

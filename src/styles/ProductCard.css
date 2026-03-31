@@ -94,3 +94,19 @@
   border-color: var(--color-primary);
   color: var(--color-white);
 }
+
+@media (max-width: 600px) {
+  .product-card {
+    padding: 15px;
+  }
+  .product-card img {
+    height: 150px;
+  }
+  .product-card h3 {
+    font-size: 1rem;
+  }
+  .product-card > button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}

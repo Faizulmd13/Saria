@@ -12,3 +12,9 @@
   margin: 0 auto;
   width: 100%;
 }
+
+@media (max-width: 768px) {
+  .content-area {
+    padding: 100px 15px 30px; /* Adjust top padding if header stacks */
+  }
+}

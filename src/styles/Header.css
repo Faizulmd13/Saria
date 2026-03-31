@@ -28,10 +28,18 @@
 }
 
 .logo h1 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: var(--color-primary);
   margin: 0;
   text-shadow: var(--shadow-glow);
+  font-family: var(--font-display); 
+}
+
+.logo h1::first-letter {
+  font-family: "El Messiri", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-white);
 }
 
 .icons {
@@ -41,14 +49,52 @@
 }
 
 .icons a {
+  position: relative; 
   color: var(--color-white);
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
-  transition: color 0.3s ease;
+  padding-bottom: 6px; 
 }
 
-.icons a:hover,
-.icons a.cart-link span {
-  color: var(--color-primary);
+.icons a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0; 
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: width 0.3s ease;
+}
+
+.icons a:hover::after {
+  width: 100%;
+}
+
+.icons a.active-link::after {
+  width: 100%;
+  box-shadow: var(--shadow-glow); 
+}
+
+.icons a.active-link {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    padding: 10px 15px;
+  }
+  .main-header nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .logo h1 {
+    font-size: 1.8rem;
+  }
+  .icons {
+    width: 100%;
+    justify-content: space-evenly;
+    gap: 10px;
+  }
 }

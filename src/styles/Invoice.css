@@ -21,7 +21,7 @@
   justify-content: space-between;
   margin-bottom: 15px;
   font-size: 1.1rem;
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .invoice-container hr {
@@ -52,4 +52,12 @@
 .checkout-btn:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-glow);
+}
+
+@media (max-width: 900px) {
+  .invoice-container {
+    position: relative;
+    top: 0;
+    margin-top: 20px;
+  }
 }

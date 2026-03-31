@@ -1,11 +1,11 @@
 import { useCart } from "../context/CartContext";
 import CartItem from "../components/cart/CartItem";
 import Invoice from "../components/cart/Invoice";
-import { Link } from "react-router";
+import { Link } from "react-router-dom"; 
 import "../styles/Cart.css";
 
 const Cart = () => {
-  const { cart } = useCart();
+  const { cart, clearCart } = useCart();
 
   if (cart.length === 0) {
     return (
@@ -18,7 +18,13 @@ const Cart = () => {
 
   return (
     <div className="cart-page">
-      <h2>Your Shopping Cart</h2>
+      <div className="cart-header">
+        <h2>Your Shopping Cart</h2>
+        <button onClick={clearCart} className="clear-cart-btn">
+          Clear Cart
+        </button>
+      </div>
+      
       <div className="cart-items">
         {cart.map((item) => (
           <CartItem key={item.id} item={item} />

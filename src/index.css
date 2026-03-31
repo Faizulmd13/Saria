@@ -1,5 +1,6 @@
 /* 1. FONT IMPORTS */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Montserrat:wght@700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@600;700&family=Inter:wght@300;400;600;800&family=Montserrat:wght@700;900&display=swap');
 
 :root {
   /* Rocamper Palette extracted from Image */
@@ -37,9 +38,13 @@
   box-sizing: border-box;
 }
 
-body {
-  background: radial-gradient(circle at top right, #1a1a1d, #0a0a0b);
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
   min-height: 100vh;
+  background-color: var(--color-base); 
+  overflow-x: hidden; 
 }
 
 /* 3. GLASS UTILITY CLASS */
